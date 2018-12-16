@@ -134,7 +134,6 @@ if __name__ == '__main__':
                 except:
                     #Wikipedia search
                     results = wikipedia.summary(query, sentences = 3)
-                    speak('Got it.', 'mm')
                     speak(results, 'resultwiki')
                     webbrowser.open(wikipedia.page(query).images[0])
                     print('Opening Image in your default browser.')
