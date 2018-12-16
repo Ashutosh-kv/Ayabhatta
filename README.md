@@ -23,7 +23,20 @@
  ## Built with
  
   * Python 3.6
-  
+ 
+ ## Setup
+ Follow these steps to set it up - 
+ 
+1. Go to www.wolframalpha.com.
+
+2. Sign up and make an APP_ID.
+
+3. Copy your APP_ID and paste it in line 10 in Aryabhatta.py on Your_App_ID.
+
+4. Paste your Gmail details at gmail details from line 92 in Aryabhatta.py.
+
+5. Done
+
  ## Made By 
  
  * Ashutosh Tiwari
