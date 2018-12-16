@@ -125,7 +125,7 @@ if __name__ == '__main__':
             try:
                 try:
                     #Wolframalpha search
-                    res = client.query(query1)
+                    res = client.query(query)
                     results = next(res.results).text
                     speak(results, 'res')
                 except:
