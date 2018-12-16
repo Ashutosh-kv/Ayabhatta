@@ -52,6 +52,7 @@ def myCommand():
     except sr.UnknownValueError:
         speak('Try writing...', 'tw')
         command = input("Try writing...")
+        return command
     
 if __name__ == '__main__':
     
@@ -95,14 +96,16 @@ if __name__ == '__main__':
                     username = Your_Username
                     password = Your_Password
                     
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.ehlo()
-                    server.starttls()
-                    server.login(username, password)
-                    server.sendmail(fromAddr, toAddr, content)
-                    server.close()
-                    
-                    speak('Email sent!', 'notify')
+                    try:
+                        server = smtplib.SMTP('smtp.gmail.com', 587)
+                        server.ehlo()
+                        server.starttls()
+                        server.login(username, password)
+                        server.sendmail(fromAddr, toAddr, content)
+                        server.close()
+                        speak('Email sent!', 'notify')
+                    except:
+                        speak('Unknown problem!', 'prob')
 
         elif 'nothing' in query or 'abort' in query or 'stop' in query:
             speak('okay', 'okay')
@@ -133,5 +136,7 @@ if __name__ == '__main__':
                     results = wikipedia.summary(query, sentences = 3)
                     speak('Got it.', 'mm')
                     speak(results, 'resultwiki')
+                    webbrowser.open(wikipedia.page(query).images[0])
+                    print('Opening Image in your default browser.')
             except:
                 speak("I don't know!", 'nk')
