@@ -134,4 +134,4 @@ if __name__ == '__main__':
                     speak('Got it.', 'mm')
                     speak(results, 'resultwiki')
             except:
-                speak("I don't know!")
+                speak("I don't know!", 'nk')
